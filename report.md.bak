@@ -1,10 +1,8 @@
 Introduction
-
      Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement ¨C a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it.
       In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants.
 
 Data
-
 The training data for this project are available here: 
 
 https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv
@@ -16,7 +14,6 @@ https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv
 The data for this project come from this source: http://groupware.les.inf.puc-rio.br/har. If you use the document you create for this class for any purpose please cite them as they have been very generous in allowing their data to be used for this kind of assignment. 
 
 View the data
-
       Load the training data and testing data into R console, naming training and testing.
 Use str() function, we can  see that there are 19622 observations in the training set, each has 160 features. And there are 20 observations in the testing set.
      Using names() function, we can take a look at the features, and we can know that the class label is the last feature ,"classe", which has 5 levels, namely "A" through "E".
@@ -24,7 +21,6 @@ Use str() function, we can  see that there are 19622 observations in the trainin
      Further, since we need to estimate the out sample error, we should split the training set into a train set and a validation set. Then, we can use the train set to build our model, and use the validation set to evaluate the model.
 
 Data cleaning
-
      In this step, we will remove some useless observations and useless features.
 First, remove columns that have NA values.
 
@@ -38,7 +34,6 @@ First, remove columns that have NA values.
 
 
 Data Splitting
-
      We should split the training set into a train set and a validation set. The split ratio is set to be 0.7. That is to say,  we use 70% of the training set as a train set, and 30% of the training set as a validation set.
      The seed is set as 144.
 
@@ -51,7 +46,6 @@ Data Splitting
 Then, the train set has 13735 observations. The validation set has 5887 observations.
 
 Create Model
-
 We use Random Forest algorithm to train the model, since RF is one of the most robust and accurate classification algorithm,  and we use a 4 fold CV to prevent overfitting.
      The procedure is as this:
 > controlRF <- trainControl(method = "cv", 5)
